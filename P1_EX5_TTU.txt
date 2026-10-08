@@ -1,11 +1,17 @@
-// sum(T1..T10)
 LOD #0
 STO Z
 LOD X
-JMZ 7
+JMZ 9 //(1)
+SUB #1
+JMZ 9 //(1)
+SUB #1
+JMZ 9 //(1)
+HLT
+//(1)
+LOD X
 SUB #2
-JMZ 17
-LOD #0
+JMZ 23 //(2)
+LOD Z
 ADD T1
 ADD T2
 ADD T3
@@ -14,13 +20,14 @@ ADD T5
 STO Z
 LOD X
 SUB #1
-JMZ 25
-LOD #0
+JMZ 31 //(3)
+//(2)
+LOD Z
 ADD T6
 ADD T7
 ADD T8
 ADD T9
 ADD T10
-ADD Z
 STO Z
+//(3)
 HLT
