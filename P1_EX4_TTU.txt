@@ -1,4 +1,21 @@
-//sort(T1,T2)
+//sort(T1,T2) in ascending order
+LOD T1
+SUB T2
+STO X
+LOD T2
+SUB T1
+STO Y
+//(1)
+LOD X
+JMZ 17 //(2)
+SUB #1
+STO X
+LOD Y
+JMZ 26 //(3)
+SUB #1
+STO Y
+JMP 7 //(1)
+//(2) swap(T1,T2)
 LOD T1
 ADD T2
 STO T1
@@ -7,4 +24,5 @@ STO T2
 LOD T1
 SUB T2
 STO T1
+//(3)
 HLT

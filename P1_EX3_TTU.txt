@@ -1,9 +1,11 @@
 //swap(T1,T2)
 LOD X
-JMZ 5
+JMZ 5 //(1)
 SUB #1
-JMZ 6
+JMZ 7 //(2)
+//(1)
 HLT
+//(2)
 LOD T1
 ADD T2
 STO T1

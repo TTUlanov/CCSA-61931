@@ -5,12 +5,9 @@ JMZ 9 //(1)
 SUB #1
 JMZ 9 //(1)
 SUB #1
-JMZ 9 //(1)
+JMZ 20 //(2)
 HLT
 //(1)
-LOD X
-SUB #2
-JMZ 23 //(2)
 LOD Z
 ADD T1
 ADD T2
@@ -20,7 +17,7 @@ ADD T5
 STO Z
 LOD X
 SUB #1
-JMZ 31 //(3)
+JMZ 28 //(3)
 //(2)
 LOD Z
 ADD T6
