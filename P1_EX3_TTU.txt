@@ -1,4 +1,4 @@
-//swap(T1,T2)
+//swap(T1,T2) if X is 1
 LOD X
 JMZ 5 //(1)
 SUB #1
