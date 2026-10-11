@@ -1,30 +1,30 @@
-LOD #0
-STO Z
-LOD X
-JMZ 9 //(1)
-SUB #1
-JMZ 9 //(1)
-SUB #1
-JMZ 20 //(2)
+LOD #0 //loads 0 into ACC
+STO Z //stores ACC into Z
+LOD X //loads X into ACC
+JMZ 9 //(1) if ACC is 0 (X=0), sum up T1..T5
+SUB #1 //subtract 1 from ACC
+JMZ 9 //(1) if ACC is 0 (X=1), sum up T1..T5
+SUB #1 //subtract 1 from ACC
+JMZ 20 //(2) if ACC is 0 (X=2), sum up T6..T10
 HLT
-//(1)
-LOD Z
-ADD T1
+//(1) sum up T1..T5
+LOD Z //loads Z into ACC
+ADD T1 //adds T1 through T5 to ACC
 ADD T2
 ADD T3
 ADD T4
 ADD T5
-STO Z
-LOD X
-SUB #1
-JMZ 28 //(3)
-//(2)
-LOD Z
-ADD T6
+STO Z //stores ACC into Z
+LOD X //loads X into ACC
+SUB #1 //subtracts 1 from ACC
+JMZ 28 //(3) if ACC is 0 (X=1), halt the program
+//(2) sum up T6..T10
+LOD Z //loads Z into ACC
+ADD T6 //adds T6..T10 to ACC
 ADD T7
 ADD T8
 ADD T9
 ADD T10
-STO Z
-//(3)
+STO Z //stores ACC into Z
+//(3) halt the program
 HLT
