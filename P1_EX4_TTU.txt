@@ -1,21 +1,22 @@
 //sort(T1,T2) in ascending order
-LOD T1
-SUB T2
-STO X
-LOD T2
-SUB T1
-STO Y
-//(1)
-LOD X
-JMZ 17 //(2)
-SUB #1
-STO X
-LOD Y
-JMZ 26 //(3)
-SUB #1
-STO Y
-JMP 7 //(1)
-//(2) swap(T1,T2)
+//calculate the difference between T1 and T2 and vice versa
+LOD T1 //ACC = T1
+SUB T2 //ACC = T1-T2
+STO X //X = ACC = T1-T2
+MUL #-1 //ACC = -(T1-T2) = T2-T1 = -X
+STO Y //Y = T2-T1
+//(1) start of a loop
+//iteratively subtract 1 from X and Y until X or Y is zero
+LOD X //ACC = X = T1-T2
+JMZ 18 //(2) if X is zero, swap T1 and T2 (because T1 >= T2)
+SUB #1 //ACC = ACC - 1
+STO X //X = ACC 
+LOD Y //ACC = Y
+JMZ 27 //(3) if Y is zero, halt (because T1 < T2 is already in ascending order)
+SUB #1 //ACC = ACC - 1
+STO Y //Y = ACC
+JMP 7 //(1) go to the start of the loop
+//(2) swap(T1,T2) - see EX3 for explanation
 LOD T1
 ADD T2
 STO T1
@@ -24,5 +25,5 @@ STO T2
 LOD T1
 SUB T2
 STO T1
-//(3)
-HLT
+//(3) halt the program
+HLT 
